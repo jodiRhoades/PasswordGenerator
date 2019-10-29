@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Generator</title>
+</head>
+
+<body>
+
+    <h1>Password Generator<h1>
+
+            ​
+            <script>
+
+                var special = confirm("Do you want to use special characters?")
+                var numeric = confirm("Do you want to use numeric characters?")
+                var uppercase = confirm("Do you want to use uppercase characters?")
+                var lowercase = confirm("Do you want to use lowercase characters?")
+
+
+                var lowerLetters = "abcdefghijklmnopqrstuvwxyz"
+                var upperLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+                var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+                var specChar = " !%'()*+,-./:;<=>?@[\]^_`{|}"
+
+
+
+// then ask if they want to use: numbers, special characters, lowers case characters or upper case characters//
+// take the number of characters the user wants to use and IF they want numbers, special characters, lower characters and upper characters//
+//then randomly choose said number of characters in each category selected by user.//
+
+                // ask the user how many characters they want to use in their password//
+                var passLength= prompt("Choose a number between 8-128 for how many characters will be in your password.")
+                
+                // verify number is greater than 7 and less than 129//
+
+                function passLength() {
+                    var pwdLength= parsenInt(prompt("Choose a number between 8-128 for how many characters will be in your password."));
+
+                    if (pwdLength > 7 && pwdLength < 129) {
+                        alert("Your number (" + pwdLength + ") matches requirements");
+                    }
+
+                    else if (isNaN(pwdLength)) {
+                        alert("That is not a number.  Please enter a number from 8- 128");
+
+                    passLength()
+                    }
+                    }
+
+                    passLength()
+                    console.log(charLength);
+
+                    function generate () {
+                        for (i = 0; i < 10; i++) {
+                        var randomLetter = arr[Math.floor(arr.length * Math.random())];
+                        document.write(randomLetter); 
+                        } 
+                        }
+
+            </script>
