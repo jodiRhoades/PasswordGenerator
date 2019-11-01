@@ -23,3 +23,8 @@ h2 {
     margin: 0 auto;
 }
 
+.card.text {
+    border: 4px dotted lightgray;
+    height: 75px;
+    width: 100%;
+}
