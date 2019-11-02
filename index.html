@@ -16,11 +16,11 @@
             <div class="container">
                 <div class="row">
                     <Section id="main-content">
-                        <div class="card" style="width: 50rem;">
+                        <div class="card" style="width: 80%">
                             <div class="card-body class= clearfix col-sm-6 col-md-8 col-lg-12">
                                 <h2 class="card-subtitle mb-2 text-muted">Generate a Password</h2>
                                 <hr>
-                                <p class="card-text">Your Secure Password</p>
+                                <p class="card-text" id="finalPassword">Your Secure Password</p>
                                 <button id='generate'>Generate Password</button>
                                 <button onclick="CopyToClipboard" id="copy link">Copy to Clipboard</button>
                             </div>
@@ -34,6 +34,7 @@
                     var upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
                     var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
                     var specChar = ["!", ",", '"', "%", "'", "(", ")", "*", "+", ",", "-", ".", "/", ":", ";", "<", "=", ">", "?", "@", "[", "\\", "^", "`", "{", "|", "}"]
+                    var passChoices = []
 
                     document.getElementById("generate").addEventListener("click", passLength)
 
@@ -42,7 +43,7 @@
                         var pwdLength = parseInt(prompt("How many characters would you like your passward to use? (8-128)"));
                         console.log(pwdLength);
                         console.log(typeof pwdLength);
-                        
+
                         if (isNaN(pwdLength)) {
                             alert("It is not a number.  Please eneter a number from 8- 128");
                             passLength();
@@ -59,34 +60,27 @@
                     }
                     // then ask if they want to use: numbers, special characters, lowers case characters or upper case characters//
                     function whatTheyWant(pwdLength) {
-                        var special = confirm("Do you want to use special characters?")
 
                         if (confirm("Do you want to use special characters?")) {
                             passChoices.push(specChar)
                         }
-                        var numeric = confirm("Do you want to use numeric characters?")
 
                         if (confirm("Do you want to use numeric characters?")) {
-                            passChoices.push(numeric)
+                            passChoices.push(numbers)
                         }
-                        var uppercase = confirm("Do you want to use uppercase characters?")
 
                         if (confirm("Do you want to use uppercase characters?")) {
-                            passChoices.push(uppercase)
+                            passChoices.push(upperLetters)
                         }
 
-                        var lowercase = confirm("Do you want to use lowercase characters?")
-                        
                         if (confirm("Do you want to use lowercase characters?")) {
-                            passChoices.push(lowercase)
+                            passChoices.push(lowerLetters)
                         }
 
-                        console.log("You chose: " + special + " " + numeric + " " + lowercase + " " + uppercase);
+                        console.log("You chose: " + specChar + " " + numbers + " " + lowerLetters + " " + upperLetters);
 
-                        generate(special, numeric, lowercase, uppercase);
-                        
-                        if (passChoices.length < 2 {
-                            alert("You must choose at least two cahracter types.")
+                        if (passChoices.length< 2) {
+                            alert("You must choose at least two character types.")
                             whatTheyWant()
                         }
 
@@ -94,25 +88,32 @@
                             console.log("here");
                             generate(pwdLength)
                         }
+                    }
 
 
-                        function generate(lengths) {
-                            console.log("generate");
-                            var randomChar = "";
+                    function generate(lengths) {
+                        console.log("generate");
+                        var randomChar = "";
 
-                            for (var i = 0; lengths; i++) {
-                                console.log("here")
-                                whatArr = Math.floor(Math.random() * passChoices.length)
-                                randomChar += passChoices[whatArr]
-                                [Math.floor(Math.random() * passChoices[whatArr].length)];
+                        for (var i = 0; i < lengths; i++) {
+                            console.log("here")
 
-                            }
-                            console.log(randomChar)
-                            // alert(" + randomChar + ")
+                            whatArr = Math.floor(Math.random() * passChoices.length)
 
-                         }
+                            randomChar += passChoices[whatArr][Math.floor(Math.random() *
+                                passChoices[whatArr].length)];
 
-                         document.getElementsByTagName("p")
+                        }
+                        console.log(randomChar)
+                        var passFinal = document.getElementById("finalPassword").innerText;
+                        passFinal = randomChar;
+                        console.log(passFinal);
+                    }
+
+                     
+
+                
+                    
 
                 </script>
 </body>
