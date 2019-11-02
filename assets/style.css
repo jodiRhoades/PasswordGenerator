@@ -8,12 +8,13 @@ h1 {
 
 h2 {
     font-size: 35px;
-    text-align: center;
+    text-align: left;
 }
 
 .card-body {    
     border: 4px solid gray;
-    margin: 25px;    
+    margin: 25px;  
+    padding: 60px;  
 }
 
 #generate {
@@ -21,8 +22,7 @@ h2 {
     background-color: red;
     color: white;
     font-size: 30px;
-    float: left;
-    margin-left: 65px;
+    float: left;    
 }
 
 #copy-link {
@@ -30,8 +30,7 @@ h2 {
     background-color: gray;
     color: white;
     font-size: 30px;
-    float: right;
-    margin-right: 65px;
+    float: right;    
 }
 
 .card {
@@ -42,7 +41,7 @@ h2 {
     font-size: 30px;        
     border: 4px dashed gray;    
     height: 150px;
-    width: 400px;    
-    margin: 20px 0px 20px 250px;
+    width: 80%;    
+    margin: auto;
     padding: 60px 0px 0px 0px;    
 }
