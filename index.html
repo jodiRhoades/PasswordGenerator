@@ -16,13 +16,17 @@
             <div class="container">
                 <div class="row">
                     <Section id="main-content">
-                        <div class="card" style="width: 80%">
+                        <div class="card" style="width: 50%">
                             <div class="card-body class= clearfix col-sm-6 col-md-8 col-lg-12">
                                 <h2 class="card-subtitle mb-2 text-muted">Generate a Password</h2>
                                 <hr>
+                                <br>
                                 <p class="card-text" id="finalPassword">Your Secure Password</p>
-                                <button id='generate'>Generate Password</button>
-                                <button onclick="CopyToClipboard" id="copy link">Copy to Clipboard</button>
+                                <br>
+                                <br>
+                                <button id ='generate'>Generate Password</button>
+                                <button id ='copy-link'>Copy to Clipboard</button>
+                                <br>
                             </div>
                         </div>
                 </div>
@@ -105,8 +109,8 @@
 
                         }
                         console.log(randomChar)
-                        var passFinal = document.getElementById("finalPassword").innerText;
-                        passFinal = randomChar;
+                        var passFinal = document.getElementById("finalPassword");
+                        passFinal.innerText = randomChar;
                         console.log(passFinal);
                     }
 
